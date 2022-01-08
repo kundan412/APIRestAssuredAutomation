@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results ignored="0" total="1" passed="1" failed="0" skipped="0">
+  <reporter-output>
+  </reporter-output>
+  <suite started-at="2022-01-08T10:17:02Z" name="Default suite" finished-at="2022-01-08T10:17:05Z" duration-ms="3413">
+    <groups>
+    </groups>
+    <test started-at="2022-01-08T10:17:02Z" name="Default test" finished-at="2022-01-08T10:17:05Z" duration-ms="3413">
+      <class name="Demo1_GET_req">
+        <test-method signature="getWeatherDetails()[pri:0, instance:Demo1_GET_req@1e8b7643]" started-at="2022-01-08T10:17:02Z" name="getWeatherDetails" finished-at="2022-01-08T10:17:05Z" duration-ms="3363" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- getWeatherDetails -->
+      </class> <!-- Demo1_GET_req -->
+    </test> <!-- Default test -->
+  </suite> <!-- Default suite -->
+</testng-results>
