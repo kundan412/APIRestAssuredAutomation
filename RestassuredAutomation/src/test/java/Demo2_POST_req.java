@@ -20,12 +20,14 @@ public class Demo2_POST_req {
 		
 		JSONObject js = new JSONObject();
 		
-		js.put("email","eve.holt@reqres.in");
-		js.put("password","pistol");
-//		js.put("age","23");
-//		js.put("id", "25");
+//		js.put("email","eve.holt@reqres.in");
+//		js.put("password","pistol");
+//		js.put("id", "26");
+		js.put("name", "test2");
+		js.put("salary", "129");
+		js.put("age","25");
 		
-//		req.header("Content-Type","application/json");
+		req.header("Content-Type","application/json");
 		req.body(js.toJSONString());
 		
 		Response res = req.request(Method.POST, "/create");
@@ -35,10 +37,12 @@ public class Demo2_POST_req {
 		
 		int statusCode = res.getStatusCode();
 		System.out.println("Response code is " + statusCode);
-		Assert.assertEquals(statusCode, 201);
+		Assert.assertEquals(statusCode, 200);
 		
-		String sCode = res.jsonPath().get("Success Code");
+		String sCode = res.jsonPath().get("status");
 		Assert.assertEquals(sCode, "success");
-		
+
+// Output - Response is {"status":"success","data":{"name":"test2","salary":"129","age":"25","id":5197},"message":"Successfully! Record has been added."}
+//		Response code is 200
 	}	
 }
