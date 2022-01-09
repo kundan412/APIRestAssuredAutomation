@@ -14,7 +14,7 @@ public class Demo2_POST_req {
 	@Test
 	void PostDetails()
 	{
-		RestAssured.baseURI = "https://reqres.in/";
+		RestAssured.baseURI = "http://dummy.restapiexample.com/api/v1";
 		
 		RequestSpecification req = RestAssured.given();
 		
@@ -25,17 +25,17 @@ public class Demo2_POST_req {
 //		js.put("age","23");
 //		js.put("id", "25");
 		
-		req.header("Content-Type","application/json");
+//		req.header("Content-Type","application/json");
 		req.body(js.toJSONString());
 		
-		Response res = req.request(Method.POST, "/api/register");
+		Response res = req.request(Method.POST, "/create");
 		
 		String respBody = res.getBody().asString();
 		System.out.println("Response is "+ respBody);
 		
 		int statusCode = res.getStatusCode();
 		System.out.println("Response code is " + statusCode);
-		Assert.assertEquals(statusCode, 200);
+		Assert.assertEquals(statusCode, 201);
 		
 		String sCode = res.jsonPath().get("Success Code");
 		Assert.assertEquals(sCode, "success");
